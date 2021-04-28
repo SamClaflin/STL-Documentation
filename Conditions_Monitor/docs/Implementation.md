@@ -4,7 +4,6 @@
 <br>
 
 ## Client
----
 ### Foundation
 The foundation of the client was created using a popular, Facebook-maintained npm package called `create-react-app`. This package automatically generates a new React.js project with a given name; this is important because there's a large quantity of Webpack boiler plate and other dependency management problems that would be a nightmare to handle independently every time.  
 
@@ -152,4 +151,3 @@ const endpoints = {
 		
 <br>
 ## API
----

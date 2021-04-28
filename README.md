@@ -4,7 +4,6 @@
 <br>
 
 ## Documentation Structure
----
 The entirety of the documentation of my ongoing projects at STL is presented in the following directory structure:
 ```bash
 STL_Documentation/
@@ -23,10 +22,8 @@ For each project, the source code is (unsurprisingly) contained within the `src`
 <br>
 
 ## Markdown
----
 All notes are written as Markdown files to provide additional aesthetic features when viewing in-browser (such as on GitHub) or using modern note taking apps that support Markdown rendering (such as Obsidian). I highly recommend viewing these notes using one of the aforementioned technologies for Markdown rendering for the best viewing experience.
 <br>
 
 ## Contact
----
 If, for any reason, you need to contact me with questions regarding any of the projects and their functionality, feel free to reach out at my student email.

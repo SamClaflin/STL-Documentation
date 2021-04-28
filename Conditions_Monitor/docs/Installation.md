@@ -9,7 +9,6 @@
 <br>
 
 ## Instructions
----
 1. Clone the enclosing GitHub repository to the desired location on your machine
 2. From the command-line, navigate into the `Conditions_Monitor/src` directory
 3. Navigate into the `api` directory and type `npm install`
@@ -17,7 +16,6 @@
 <br>
 
 ## IMPORTANT: AWS-CLI Setup
----
 After installing the AWS-CLI on your machine:
 1. Create the following file: `Conditions_Monitor/src/api/.env`; this is where the private AWS tokens will be stored (**MAKE SURE TO ADD .env TO ANY .gitignore FILES**) 
 2. Within this new `.env` file, copy and paste the following:
@@ -39,5 +37,4 @@ After installing the AWS-CLI on your machine:
 <br>
 
 ## Running
----
 To run either the API or the Client, navigate into its respective directory (AFTER completing and the prerequisites and running `npm install`) and type `npm start`

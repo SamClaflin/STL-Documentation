@@ -4,7 +4,6 @@
 <br>
 
 ## Parsing
----
 Each of the sub VIs responsible for parsing data of various file types work in fundamentally the same way:
 1. The entirety of the given input file is read in binary format and promptly closed.
 2. The binary data obtained from the previous step is passed into a primary `while` loop. 
@@ -17,12 +16,10 @@ Each of the sub VIs responsible for parsing data of various file types work in f
 <br>
 
 ## ZIP/DOCX
----
 While all the parsing modules are quite similar aside from the file signatures that are being searched for, there's an essential difference with ZIP and DOCX files that serves as one of the primary motivators for splitting all these modules into sub VIs in the first place. Unlike PNG and JPG files, ZIP and DOCX files (which have the same file signature), do **not** have a single, searchable EOF signature. Instead, they have a searchable EOF signature that's **exactly 18 bytes away** from the true end of the file. Therefore, the EOF signature is searched for, and the 18 bytes that immediately follow it in addition to the signature itself are appended onto the end of the file data prior to being saved as an actual ZIP or DOCX.
 <br>
 
 ## Context Search
----
 As mentioned in the `Architecture` documentation file, `Context-Search.vi` is located in the `src` directory and is not currently being used by the main application, but contains all of the code required to parse a given substring and its surrounding context of a desired length from any input string. The implementation for this works in the following way:
 1. Read from a given input text file and store the data in a string
 2. Read from a predetermined delimited spreadsheet (text file in which each word is separated by a carriage return) and store each word in an array
