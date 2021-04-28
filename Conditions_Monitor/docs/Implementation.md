@@ -67,6 +67,8 @@ CSS. However, given that this is a React.js application, there are two essential
 	<div className="my-class"></div> <!-- Correct -->
 	<div class="my-class"></div> <!-- Incorrect -->
 	```
+	<br>
+	
 2. CSS files are typically created for each individual component (although they don't have to be) and any component containing HTML elements that are styled by a particular CSS file **MUST IMPORT THAT CSS FILE** at the top of the module:
 	```javascript
 	// MyComponentName.js
@@ -135,8 +137,8 @@ Assuming that the target device group (as it appears in the database) is `"your-
 // client/src/Components/Graph.js
 
 this.endpoints = {
-// pre-existing endpoints
-"Your Device Group": "your-device-group",
+	// pre-existing endpoints
+	"Your Device Group": "your-device-group",
 };	
 ```
 
@@ -144,10 +146,11 @@ this.endpoints = {
 // api/routes.js
 
 const endpoints = {
-// pre-existing endpoints
-"your-device-group": genQueryString("your-device-group");
+	// pre-existing endpoints
+	"your-device-group": genQueryString("your-device-group");
 };
 ```
 		
 <br>
+
 ## API

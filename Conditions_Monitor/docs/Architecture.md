@@ -18,7 +18,7 @@ JavaScript is used on both the frontend and the backend in order to simplify the
 The entire Conditions Monitor project is split into two subapplications: the *Client* (frontend) and the *API* (backend).
 <br>
 **Client**:
-```bash
+```
 client/
 |
 |___public/
@@ -57,11 +57,14 @@ client/
 ```
 <br>
 There's a lot to unpack here, so let's look at it step by step:
+<br>
 
 - **public**: Contains basic website essentials. In general, this shouldn't need to be changed.
 	- the only HTML file
 	- the application icon 
 	- specification for PWAs
+	<br>
+	
 - **src**: Contains all the code for the application; this essentially follows the exact standard for React.js application structure.
 	- **assets**: Directory containing all images used in the application
 	- **Components**: Directory containing all custom React.js components (i.e. Nav Bar, Footer, Graph, Body, etc.)
@@ -69,12 +72,16 @@ There's a lot to unpack here, so let's look at it step by step:
 	- **App.js**: The main JavaScript file that specifies which components will be implemented in the actual application and in what order
 	- **index.js**: The JavaScript file that receives the main App component and renders it within the `index.html` file (shouldn't need to be changed)
 	- **index.css**: The main CSS file that contains global application styling rules and, more importantly, all CSS variables used throughout the application (these variables can be used in any CSS file without any include statements since the variables are specified in the root of the application; simply call `property: var(--var-name`)
+	<br>
+	
 - **node_modules**: Contains all third-party dependencies for the project (**IMPORTANT**: if creating a new Git repository for this project, remember to add `node_modules/` to the gitignore)
 - **package.json**: Contains all information regarding project structure, dependencies, and run scripts (auto-generated)
 - **package-lock.json**: Similar to `package.json`, but is specifically intended for locking each project dependency at the version at which it was installed (auto-generated) 
 <br>
+
 **API**:
-```bash
+
+```
 api/
 |
 |___node_modules/
