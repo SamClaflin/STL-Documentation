@@ -1,0 +1,47 @@
+/* Main Footer */
+.footer {
+    background-color: var(--nav-color);
+    width: 100%;
+    height: 50vh;
+    padding: 100px;
+}
+
+/* Footer Text Box */
+.footer-text-box {
+    height: 80%;
+    width: 300px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    font-family: var(--main-font);
+    color: var(--footer-font-color);
+}
+
+/* Footer Text */
+.footer-text {
+    margin: 20px 0 20px 0;
+}
+
+/* Footer Text */
+.footer-text a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--footer-font-color);
+}
+
+/* Footer Text (Link Normal) */
+.footer-text a:link, a:visited {
+    color: var(--footer-font-color); 
+}
+
+/* Footer Text (Link Hover) */
+.footer-text a:hover, a:active {
+    color: #fff; 
+    border-bottom: 1px solid #fff;
+}
+
+/* Footer Image (UML Logo) */
+.footer-image {
+    width: 20%;
+}

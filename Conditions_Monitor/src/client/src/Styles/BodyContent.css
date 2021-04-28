@@ -1,0 +1,18 @@
+/* ------------------------------[ BODY CONTENT ]------------------------------ */
+/* Body Content */
+.body-content {
+    width: 75%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+}
+
+/* Body Content Header */
+.body-content-header {
+    font-family: var(--main-font);
+    font-weight: 300;
+    font-size: 50px;
+    margin: 20px 0 40px 0;
+}

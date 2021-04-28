@@ -1,0 +1,45 @@
+/* ------------------------------[ BODY MENU ]------------------------------ */
+/* Body Menu */
+.body-menu {
+    width: 25%;
+    border-right: var(--body-border); 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    padding: 3%;
+}
+
+/* Body Menu List Headings */
+.body-menu-list-heading {
+    font-family: var(--main-font);
+    font-weight: 700;
+    color: var(--nav-color);
+    font-size: 18px;
+    margin: 25px 0 10px 0;
+    border-bottom: var(--body-border);
+    padding-bottom: 5px;
+}
+
+/* Body Menu List */
+.body-menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+/* Body Menu List Links (Normal) */
+.body-menu-link {
+    font-family: var(--main-font);
+    color: var(--link-color);
+    margin: 4px 0 4px 0;
+}
+
+/* Body Menu List Links (Hover) */
+.body-menu-link:hover {
+    font-family: var(--main-font);
+    color: var(--link-hover-color);
+    cursor: pointer;
+}

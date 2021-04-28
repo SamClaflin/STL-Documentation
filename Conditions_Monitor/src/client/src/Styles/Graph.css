@@ -1,0 +1,24 @@
+/* Main Graph */
+.graph {
+    position: relative;
+}
+
+/* Graph Overlay */
+.graph-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--graph-overlay-color); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px 20px var(--graph-overlay-color);
+    border-radius: 20px;
+}
+
+.hidden {
+    display: none;
+}

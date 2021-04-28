@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --nav-color: #232323;
+    --logo-offset: 175px;
+    --blurred-image-height: 45vh;
+    --main-body-height: 100vh; 
+    --body-border: 1px solid rgb(222, 222, 222);
+    --cursive-font: 'Courgette', cursive;
+    --main-font: 'Roboto', sans-serif; 
+    --link-color: #006EBD;
+    --link-hover-color: #093f65;
+    --footer-font-color: #8A8A8A;
+    --graph-overlay-color: rgba(231, 231, 231, 0.65);
+}
