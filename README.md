@@ -5,7 +5,7 @@
 
 ## Documentation Structure
 The entirety of the documentation of my ongoing projects at STL is presented in the following directory structure:
-```bash
+```
 STL_Documentation/
 |
 |---Conditions_Monitor/
