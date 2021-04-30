@@ -154,3 +154,33 @@ const endpoints = {
 <br>
 
 ## API
+### Foundation
+The core techology that the API is comprised of is Express.js, an immensely popular framework that allows for the use of JavaScript on the backend. Despite the fact that JavaScript is typically considred a pain point in the development process, I found that limiting the scope of the project to a single primary language allowed for the greatest level of simplicity. The only other main technology used in the backend is the AWS API for Node.js, which is required for querying any type of AWS database. 
+<br>
+
+### Key Ideas
+The file that Node.js actually executes within the API is `api.js`. As you'll see upon viewing this file, it's extremely short and simple. This file is solely responsible for instantiating an `express` object, which is abstractly referred to as an "app" in most cases, specifying which technologies will be integrated with this app (currently only `cors` and `helmet`), then starting the app using the `listen` method and specifying a port. You'll notice the following statement in this file:
+```javascript
+// app.js
+
+...
+const apiRouter = require("./routes");
+
+...
+app.use("/", apiRouter);
+```
+<br>
+
+This segways into the next major component of the API: the routes (contained in `routes.js`). This file is responsible for dynamically creating each unique endpoint that the API will serve. In the context of the Conditions Monitor, each of these endpoints represents a *single* device grouping; this is so that querying the AWS database can be made incredibly simple by linking a query string for a single device group to a single endpoint. As mentioned in the **Client** portion of the documentation, the `api/routes::endpoints` global is responsible for maintaining an easy-to-edit list of endpoints and their corresponding query strings. In order to make use of this hashmap, a loop at the bottom of the file iterates over its contents, generates a route in adherance to the Express.js syntax, and inserts it into the `router` object that is eventually exported to the `app.js` file. Additionally, this file contains the essential `performQuery` function, which dictates exactly how queries to *all* routes will be performed.
+<br>
+
+### Rate Limiting
+The final major component of the `routes.js` file is the concept of *rate limiting*. Rate limiting is handled by storing timestamps (in milliseconds) in the global `state` variable; each timestamp is associated with a *single endpoint*, meaning that rate limiting is applied on a per-endpoint basis as opposed to globally throughout the entire application. This allows for a seamless user experience on the frontend since a user accessing a single endpoint will not result in *any* delay if they happen to immediately make a request to a second endpoint. When the `performQuery` function is called, the current timestamp is retrieved, converted to milliseconds, and compared against the timestamp currently stored in the `state` variable that corresponds with the route that the user attempted to access. If the result of this comparison is less than the global `rateLimit` variable, no query is performed and the data from the previous request to the current route (also stored in the `state` variable) is instantly returned as a response; this means that a user repeatedly making a request to the same route on the frontend will *always* return valid data, even if the actualy query attempt was unsuccessful.  
+<br>
+
+### AWS Integration 
+The last file to discuss is `query.js`: the file that actually performs the AWS query (called by `performQuery` if the rate limiting condition has succeeded). This file has two major components: 
+1. The instantiation of an "AWS" object (stores all credentials that were originally written to the `.env` file)
+2. The `getAllRows` function that is responsible for querying the database
+
+The structure of `getAllRows` may appear a bit strange at first considering the fact that it's an asynchronous function and is iterating through all received tokens recursively, but this function is almost identical to an example provided in the AWS/Node.js integration documentation [here](https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html). I found this documention to be quite helpful, so I'd highly suggest referring to it in the event that the low-level application query structure needs to be changed, but all my testing showed that everything was function as expected with the current structure.
