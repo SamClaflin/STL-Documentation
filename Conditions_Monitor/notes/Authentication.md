@@ -1,6 +1,5 @@
 # Authentication
 ## ADFS
----
 - *ADFS*: Active Directory Federated Services 
 - used by UML for authentication 
 - federated identity management solution
@@ -9,7 +8,6 @@
 <br>
 
 ## AWS Cognito + ADFS
----
 1. Log into AWS and navigate to Cognito
 2. Create a new user pool
 3. Navigate to `App clients` and create a new app (leave defaults)
@@ -21,31 +19,7 @@
 9. Obtain logout URI by copying the login URL and replacing `login` with `logout`
 <br>
 
-## Sign in with Google
----
-- any application that uses OAuth 2.0 to access Google APIs must have authorization credentials that identify the application to *Google's* OAuth 2.0 server
-- credential creation steps:
-	1. Go to [Credentials Page](https://console.developers.google.com/apis/credentials)
-	2. Click **Create credentials > OAuth client ID**
-	3. Select **Web application** application type
-	4. Name your OAuth 2.0 client and click create
-	5. Take not of the client ID that was created; you need this client ID for subsequent steps
-	6. Include the Google Platform Library on all web pages that integrate Google Sign-In:
-		```HTML
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-		```
-	7. Specify the client ID you created for your app in the Google Developers Console with the `google-signin-client_id` meta element:
-		```HTML
-		<meta name="google-signin-client\_id" content="YOUR\_CLIENT\_ID.apps.googleusercontent.com">
-		```
-	8. Add a Google Sign-In button by implementing the following:
-		```HTML
-		<div class="g-signin2" data-onsuccess="onSignIn"></div>
-		```
-<br>
-
 ## JSON Web Tokens (JWTs)
----
 - used for **AUTHORIZATION**, NOT **AUTHENTICATION**
 	- *authentication*: validating a user's identity
 	- *authorization*: allowing a user to access certain features given that they've been *authenticated*
