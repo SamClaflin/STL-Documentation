@@ -17,18 +17,20 @@ Creating new components is thankfully a simple task. Create a new JavaScript fil
 
 import { Component } from "react";
 
-export default class MyComponentName {
-	constructor(props) {
-		super(props);
-		this.state = { };
-	} 
-	
-	render() {
-		return (
-			<div></div>
-		);
-	}
+class MyComponentName extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { }
+    }
+
+    render() { 
+        return (
+            <div></div>
+        );
+    }
 }
+ 
+export default MyComponentName;
 ```
 You can find the documentation for React.js [here](https://reactjs.org/docs/getting-started.html); I refrained from using any advanced features in order to keep the project as simple as possible, so only introductory knowledge should be required. 
 
